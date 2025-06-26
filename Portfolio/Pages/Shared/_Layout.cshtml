@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Portfolio.styles.css" asp-append-version="true" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="Menu-Port">
+        <i id="iconMenu" class="fa-solid fa-door-open icone-menu botao-icone"></i>
+
+        <div class="menu-itens">
+            <div class="menu-container ini-container">
+                <i class="fa-solid fa-house icone-menu"></i>
+                <div class="borda-texto transicao-texto"><span class="texto-menu">INÍCIO</span></div>
+            </div>
+
+            <div class="menu-container sobremim-container">
+                <i class="fa-solid fa-address-card icone-menu"></i>
+                <div class="borda-texto transicao-texto"><span class="texto-menu">SOBRE MIM</span></div>
+            </div>
+
+            <div class="menu-container habi-container">
+                <i class="fa-solid fa-graduation-cap icone-menu"></i>
+                <div class="borda-texto transicao-texto"><span class="texto-menu">HABILIDADES</span></div>
+            </div>
+
+            <div class="menu-container exp-container">
+                <i class="fa-solid fa-briefcase icone-menu"></i>
+                <div class="borda-texto transicao-texto"><span class="texto-menu">EXPERIÊNCIAS</span></div>
+            </div>
+
+            <div class="menu-container github-container">
+                <i class="fa-brands fa-github icone-menu"></i>
+                <div class="borda-texto transicao-texto"><span class="texto-menu">GITHUB</span></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <main role="main">
+            @RenderBody()
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - Portfolio - <a asp-area="" asp-page="/Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

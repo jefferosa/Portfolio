@@ -1,0 +1,75 @@
+######################################
+# ASP.NET Core
+######################################
+bin/
+obj/
+*.dbmdl
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+.vs/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+
+######################################
+# Node.js (React, frontend, API, etc.)
+######################################
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Ambiente
+.env
+.env.*.local
+
+# Cache
+.cache/
+.next/
+dist/
+build/
+
+######################################
+# React específico
+######################################
+*.log
+*.tgz
+.vite/
+*.local
+coverage/
+*.map
+.DS_Store
+
+######################################
+# Docker
+######################################
+**/docker-compose.override.yml
+docker-compose.*
+.dockerignore
+
+######################################
+# Visual Studio Code / JetBrains Rider
+######################################
+.vscode/
+.idea/
+
+######################################
+# SOs e arquivos inúteis
+######################################
+Thumbs.db
+.DS_Store
+*.bak
+*.orig
+*.tmp
+
+######################################
+# Certificados e segredos
+######################################
+*.pfx
+*.key
+*.cer
+secrets.json
+appsettings.Development.json

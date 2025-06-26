@@ -1,0 +1,87 @@
+.Menu-Port {
+    margin-top: 30px;
+    margin-left: 30px;
+    width: 200px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ícone da porta */
+.botao-icone {
+    cursor: pointer;
+    font-size: 24px;
+    color: white;
+    transition: transform 0.3s ease-in-out;
+}
+
+.botao-icone:hover {
+    font-size: 28px;
+}
+
+/* container que controla exibição */
+.menu-itens {
+    overflow: hidden;
+}
+
+/* cada item de menu aparece de cima para baixo */
+.menu-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    width: 100px;
+    opacity: 0;
+    transform: translateY(-40px);
+    transition: all 0.5s ease;
+    pointer-events: none;
+    margin-top: 20px;
+}
+
+.Menu-Port.mostrar .menu-container {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ícones */
+.icone-menu {
+    font-size: 20px;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-container:hover .icone-menu,
+.botao-icone:hover {
+    font-size: 24px;
+}
+
+/* texto dentro do menu */
+.borda-texto {
+    margin-left: 8px;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.texto-menu {
+    margin: 5px;
+    font-weight: bold;
+    font-family: 'Times New Roman';
+    color: black;
+}
+
+/* texto escondido por padrão */
+.transicao-texto {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: all 0.3s ease-in-out;
+    margin-left: 5px;
+    white-space: nowrap;
+}
+
+/* texto só aparece no hover */
+.menu-container:hover .transicao-texto {
+    opacity: 1;
+    transform: translateX(0);
+    font-size: 16px;
+}
