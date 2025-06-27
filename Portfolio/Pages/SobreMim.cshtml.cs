@@ -3,11 +3,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Portfolio.Pages
 {
-    public class PrivacyModel : PageModel
+    public class SobreMimModel : PageModel
     {
-        private readonly ILogger<PrivacyModel> _logger;
+        private readonly ILogger<SobreMimModel> _logger;
 
-        public PrivacyModel(ILogger<PrivacyModel> logger)
+        public SobreMimModel(ILogger<SobreMimModel> logger)
         {
             _logger = logger;
         }

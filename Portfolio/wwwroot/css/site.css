@@ -1,8 +1,19 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background-color: black;
+}
+
+.Menu-Port, .botao-icone, .icone-menu {
+    color: rgb(0,100,0);
+}
+
 .Menu-Port {
     margin-top: 30px;
     margin-left: 30px;
     width: 200px;
-    color: white;
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -12,7 +23,6 @@
 .botao-icone {
     cursor: pointer;
     font-size: 24px;
-    color: white;
     transition: transform 0.3s ease-in-out;
 }
 
@@ -33,8 +43,13 @@
     width: 100px;
     opacity: 0;
     transform: translateY(-40px);
-    transition: all 0.5s ease;
+    transition: all 0.8s ease;
     pointer-events: none;
+    text-decoration: none;
+    color: inherit;
+}
+
+.margin-top {
     margin-top: 20px;
 }
 
@@ -47,7 +62,6 @@
 /* ícones */
 .icone-menu {
     font-size: 20px;
-    color: white;
     transition: all 0.3s ease-in-out;
 }
 
@@ -60,14 +74,14 @@
 .borda-texto {
     margin-left: 8px;
     border-radius: 10px;
-    background-color: white;
+    background-color: rgba(0,100,0,0.3);
 }
 
 .texto-menu {
     margin: 5px;
     font-weight: bold;
     font-family: 'Times New Roman';
-    color: black;
+    color: white;
 }
 
 /* texto escondido por padrão */
@@ -84,4 +98,8 @@
     opacity: 1;
     transform: translateX(0);
     font-size: 16px;
+}
+
+.menu-container:hover {
+    text-decoration: none;
 }
