@@ -4,17 +4,29 @@
     ViewData["Title"] = "Início";
 }
 
-<head>
-    <link rel="stylesheet" href="~/css/IndexStyle.css">
-</head>
-    
-<body class="corpoInicio">
-    <div class="container">
-        <div class="row">
-           <div class="col-md-12">
-               <h1 id="teste" class="text-center">Bem vindo ao meu Portfólio</h1>
-               <p class="text-center">This is a sample portfolio page built with ASP.NET Core.</p>
-           </div>
-       </div>
-   </div>
-</body>
+<div class="container-apresentacao">
+    <div class="perfil-container">
+        <img src="https://i.pravatar.cc/260?img=5" alt="Jefferson Rosa" class="foto-perfil" />
+        <div class="status-disponivel">🟢 Disponível</div>
+    </div>
+
+    <div class="apresentacao">
+        <h1>Olá, eu sou <span class="nome-gradiente">Jefferson Rosa</span></h1>
+        <p>
+            Sou desenvolvedor de software com experiência em
+            <span class="destaque">ASP.NET</span>, <span class="destaque">.NET</span>, <span class="destaque">C#</span>,
+            <span class="destaque">SQL</span>, <span class="destaque">JavaScript</span>,
+            <span class="destaque">HTML</span>, <span class="destaque">CSS</span> e testes unitários.
+        </p>
+        <p>Atualmente estou disponível para novos desafios profissionais.</p>
+
+        <div class="botoes">
+            <a href="#projetos" class="btn">Ver mais</a>
+            <a href="/cv-jefferson.pdf" class="btn secundario" target="_blank">Download CV</a>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/index.css" asp-append-version="true" />
+}

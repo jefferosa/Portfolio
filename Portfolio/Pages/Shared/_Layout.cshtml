@@ -3,64 +3,58 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"]</title>
+    <title>@ViewData["Title"] - Portfolio Jefferson</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="~/Portfolio.styles.css" asp-append-version="true" />
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    @RenderSection("Styles", required: false)
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 </head>
-<body class="corpoInicio">
+<body>
     <div class="Menu-Port">
         <i id="iconMenu" class="fa-solid fa-door-closed icone-menu botao-icone"></i>
 
-        <div class="menu-itens">
+        <div id="menuItens" class="menu-itens">
             <a asp-page="/Index" class="menu-container ini-container margin-top">
                 <i class="fa-solid fa-house icone-menu"></i>
+                <span class="led"></span>
                 <div class="borda-texto transicao-texto"><span class="texto-menu">INÍCIO</span></div>
             </a>
 
-            <div class="menu-container sobremim-container margin-top">
-                <a asp-page="/SobreMim" class="menu-container github-container">
-                    <i class="fa-solid fa-address-card icone-menu"></i>
-                    <div class="borda-texto transicao-texto"><span class="texto-menu">SOBRE MIM</span></div>
-                </a>
-            </div>
+            <a asp-page="/SobreMim" class="menu-container sobremim-container margin-top">
+                <i class="fa-solid fa-address-card icone-menu"></i>
+                <span class="led"></span>
+                <div class="borda-texto transicao-texto"><span class="texto-menu">SOBRE MIM</span></div>
+            </a>
 
             <div class="menu-container habi-container margin-top">
                 <i class="fa-solid fa-graduation-cap icone-menu"></i>
+                <span class="led"></span>
                 <div class="borda-texto transicao-texto"><span class="texto-menu">HABILIDADES</span></div>
             </div>
 
             <div class="menu-container exp-container margin-top">
                 <i class="fa-solid fa-briefcase icone-menu"></i>
+                <span class="led"></span>
                 <div class="borda-texto transicao-texto"><span class="texto-menu">EXPERIÊNCIAS</span></div>
             </div>
 
-            <div class="menu-container github-container margin-top">
-                <a href="https://github.com/jefferosa" class="menu-container github-container" target="_blank">
-                    <i class="fa-brands fa-github icone-menu"></i>
-                    <div class="borda-texto transicao-texto"><span class="texto-menu">GITHUB</span></div>
-                </a>
-            </div>
+            <a href="https://github.com/jefferosa" class="menu-container github-container margin-top" target="_blank">
+                <i class="fa-brands fa-github icone-menu"></i>
+                <span class="led"></span>
+                <div class="borda-texto transicao-texto"><span class="texto-menu">GITHUB</span></div>
+            </a>
         </div>
     </div>
 
-    <div class="container">
-        <main role="main">
-            @RenderBody()
-        </main>
+    <div class="main-content">
+        @RenderBody()
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Portfolio - <a asp-area="" asp-page="/Privacy">Privacy</a>
-        </div>
-    </footer>
-    
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
 
-    @await RenderSectionAsync("Scripts", required: false)
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

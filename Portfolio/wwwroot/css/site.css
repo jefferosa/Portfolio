@@ -1,28 +1,36 @@
-body, html {
+/* Reset e layout global */
+html, body {
     margin: 0;
     padding: 0;
     height: 100%;
-    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
     background-color: black;
+    color: white;
+    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
-.Menu-Port, .botao-icone, .icone-menu {
-    color: rgb(0,100,0);
-}
-
+/* Menu fixo à esquerda */
 .Menu-Port {
-    margin-top: 30px;
-    margin-left: 30px;
-    width: 200px;
+    padding-top: 30px;
+    padding-left: 20px;
+    width: 220px;
     display: flex;
     flex-direction: column;
     gap: 15px;
+    background-color: black;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 10;
 }
 
-/* ícone da porta */
+/* Ícone da porta */
 .botao-icone {
     cursor: pointer;
     font-size: 24px;
+    color: rgb(0,100,0);
     transition: transform 0.3s ease-in-out;
 }
 
@@ -30,27 +38,18 @@ body, html {
     font-size: 28px;
 }
 
-/* container que controla exibição */
-.menu-itens {
-    overflow: hidden;
-}
-
-/* cada item de menu aparece de cima para baixo */
+/* Itens do menu */
 .menu-container {
     display: flex;
     align-items: center;
     cursor: pointer;
-    width: 100px;
+    width: 100%;
     opacity: 0;
     transform: translateY(-40px);
-    transition: all 0.8s ease;
+    transition: all 0.5s ease;
     pointer-events: none;
     text-decoration: none;
     color: inherit;
-}
-
-.margin-top {
-    margin-top: 20px;
 }
 
 .Menu-Port.mostrar .menu-container {
@@ -59,18 +58,17 @@ body, html {
     pointer-events: auto;
 }
 
-/* ícones */
-.icone-menu {
-    font-size: 20px;
-    transition: all 0.3s ease-in-out;
-}
-
 .menu-container:hover .icone-menu,
 .botao-icone:hover {
     font-size: 24px;
 }
 
-/* texto dentro do menu */
+.icone-menu {
+    font-size: 20px;
+    color: rgb(0,100,0);
+    transition: all 0.3s ease-in-out;
+}
+
 .borda-texto {
     margin-left: 8px;
     border-radius: 10px;
@@ -84,7 +82,6 @@ body, html {
     color: white;
 }
 
-/* texto escondido por padrão */
 .transicao-texto {
     opacity: 0;
     transform: translateX(40px);
@@ -93,13 +90,84 @@ body, html {
     white-space: nowrap;
 }
 
-/* texto só aparece no hover */
 .menu-container:hover .transicao-texto {
     opacity: 1;
     transform: translateX(0);
     font-size: 16px;
 }
 
-.menu-container:hover {
-    text-decoration: none;
+/* Container onde o conteúdo da página aparece */
+.main-content {
+    margin-left: 220px;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 60px;
+    box-sizing: border-box;
+}
+
+.Menu-Port {
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.icone-menu {
+    color: #00ffc3;
+    text-shadow: 0 0 6px #00ffc3;
+}
+
+.botao-icone:hover,
+.menu-container:hover .icone-menu {
+    color: #00ffc3;
+    text-shadow: 0 0 8px #00ffc3;
+}
+
+.menu-container {
+    transition: transform 0.4s ease-in-out, opacity 0.4s ease-in-out;
+}
+
+.menu-container:hover .icone-menu {
+    transform: rotate(5deg);
+}
+
+.led {
+    width: 8px;
+    height: 8px;
+    background-color: #00ffc3;
+    border-radius: 50%;
+    box-shadow: 0 0 6px #00ffc3;
+    margin-right: 8px;
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.4;
+    }
+
+    50% {
+        opacity: 1;
+    }
+}
+
+.Menu-Port {
+    outline: none;
+    border: none;
+    border-right: 1px solid rgba(255, 255, 255, 0.05); /* mais sutil */
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.6);
+}
+
+html, body {
+    border: none;
+    outline: none;
+}
+
+.Menu-Port {
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
 }
