@@ -6,9 +6,12 @@
 
 <div class="container-apresentacao">
     <div class="perfil-container">
-        <img src="~/Imagens/index.png" alt="Jefferson Rosa" class="foto-perfil" />
+        <div class="borda-animada">
+            <img src="~/Imagens/index.png" alt="Jefferson Rosa" class="foto-perfil" />
+        </div>
         <div class="status-disponivel">🟢 Disponível</div>
     </div>
+
 
     <div class="apresentacao">
         <h1>Olá, eu sou <span class="nome-gradiente">Jefferson Rosa</span></h1>
@@ -21,8 +24,10 @@
         <p>Atualmente estou disponível para novos desafios profissionais.</p>
 
         <div class="botoes">
-            <a href="#projetos" class="btn">Ver mais</a>
-            <a href="/cv-jefferson.pdf" class="btn secundario" target="_blank">Download CV</a>
+            <a asp-page="/Habilidades" class="btn-gradiente ver-mais">
+                Ver mais <i class="fa-regular fa-eye icon-vermais"></i>
+            </a>
+            <a href="~/Arquivos/CV.pdf" download class="btn secundario btn-outline-success" target="_blank">Download CV</a>
         </div>
     </div>
 </div>

@@ -32,10 +32,14 @@
 }
 
 .nome-gradiente {
-    background: linear-gradient(90deg, #8a2be2, #00ff88);
+    font-weight: bold;
+    background: linear-gradient( 270deg, #00ff88, #00ffff, #8a2be2, #00ff88 );
+    background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    animation: gradienteAndando 8s linear infinite;
 }
+
 
 .destaque {
     color: #00ff88;
@@ -100,3 +104,74 @@
         transform: translateY(-10px);
     }
 }
+
+/* Botão com gradiente animado */
+.btn-gradiente {
+    background: linear-gradient( 270deg, #00ff88, #00ffff, #8a2be2, #00ff88 );
+    background-size: 400% 400%;
+    color: black;
+    padding: 10px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    animation: gradienteAndando 8s linear infinite;
+    box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn-gradiente:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Ícone do botão “ver mais” com animação no hover */
+.icon-vermais {
+    transition: transform 0.1s ease;
+}
+
+.ver-mais:hover .icon-vermais {
+    transform: translateX(3px);
+}
+
+/* Gradiente animado */
+@keyframes gradienteAndando {
+    0% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.borda-animada {
+    padding: 6px;
+    border-radius: 24px;
+    background: conic-gradient( from 0deg, #00ff88, #00ffff, #8a2be2, #00ff88 );
+    animation: girarBorda 4s linear infinite;
+    display: inline-block;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/* Remove a borda original da imagem */
+.borda-animada .foto-perfil {
+    border: none;
+    border-radius: 20px;
+    display: block;
+}
+
+/* Animação da borda girando */
+/*@keyframes girarBorda {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}*/
