@@ -11,14 +11,54 @@
     box-sizing: border-box;
 }
 
+.perfil-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    animation: flutuar 4s ease-in-out infinite;
+}
+
+/* === Foto com borda animada === */
+.borda-animada-gradiente {
+    display: inline-block;
+    padding: 4px;
+    border-radius: 22px;
+    background: linear-gradient(270deg, #00ff88, #00ffff, #8a2be2, #00ff88);
+    background-size: 600% 600%;
+    animation: gradienteAndando 8s linear infinite;
+}
+
 .foto-perfil {
     width: 260px;
     height: auto;
-    border-radius: 20px;
+    border-radius: 18px;
+    display: block;
+    background-color: black;
     box-shadow: 0 0 20px rgba(0,255,100,0.3);
-    border: 3px solid #00ff88;
 }
 
+.status-disponivel {
+    color: #00ff88;
+    background-color: rgba(0, 255, 136, 0.1);
+    border: 1px solid #00ff88;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 14px;
+    box-shadow: 0 0 20px rgba(0,255,100,0.3);
+}
+
+@keyframes flutuar {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* === Texto de apresentação === */
 .apresentacao {
     flex: 1;
     min-width: 280px;
@@ -33,33 +73,40 @@
 
 .nome-gradiente {
     font-weight: bold;
-    background: linear-gradient( 270deg, #00ff88, #00ffff, #8a2be2, #00ff88 );
+    background: linear-gradient(270deg, #00ff88, #00ffff, #8a2be2, #00ff88);
     background-size: 400% 400%;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     animation: gradienteAndando 8s linear infinite;
 }
 
-
 .destaque {
     color: #00ff88;
     font-weight: bold;
 }
 
+/* === Botões === */
 .botoes {
     margin-top: 25px;
     display: flex;
     gap: 15px;
 }
 
-.btn {
-    background: #00ff88;
-    color: black;
+.btn, .btn-gradiente {
     padding: 10px 22px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
-    transition: background 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.btn {
+    background: #00ff88;
+    color: black;
+    border: none;
 }
 
 .btn:hover {
@@ -77,50 +124,12 @@
     color: black;
 }
 
-.perfil-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-    animation: flutuar 4s ease-in-out infinite;
-}
-
-.status-disponivel {
-    color: #00ff88;
-    background-color: rgba(0, 255, 136, 0.1);
-    border: 1px solid #00ff88;
-    padding: 4px 12px;
-    border-radius: 12px;
-    font-size: 14px;
-} 
-
-/* Animação suave de flutuação */
-@keyframes flutuar {
-    0%, 100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-10px);
-    }
-}
-
-/* Botão com gradiente animado */
 .btn-gradiente {
-    background: linear-gradient( 270deg, #00ff88, #00ffff, #8a2be2, #00ff88 );
+    background: linear-gradient(270deg, #00ff88, #00ffff, #8a2be2, #00ff88);
     background-size: 400% 400%;
     color: black;
-    padding: 10px 22px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    border: none;
     animation: gradienteAndando 8s linear infinite;
     box-shadow: 0 0 10px rgba(0, 255, 136, 0.4);
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
 }
 
 .btn-gradiente:hover {
@@ -128,7 +137,6 @@
     filter: brightness(1.1);
 }
 
-/* Ícone do botão “ver mais” com animação no hover */
 .icon-vermais {
     transition: transform 0.1s ease;
 }
@@ -137,7 +145,6 @@
     transform: translateX(3px);
 }
 
-/* Gradiente animado */
 @keyframes gradienteAndando {
     0% {
         background-position: 100% 50%;
@@ -147,31 +154,3 @@
         background-position: 0% 50%;
     }
 }
-
-.borda-animada {
-    padding: 6px;
-    border-radius: 24px;
-    background: conic-gradient( from 0deg, #00ff88, #00ffff, #8a2be2, #00ff88 );
-    animation: girarBorda 4s linear infinite;
-    display: inline-block;
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-}
-
-/* Remove a borda original da imagem */
-.borda-animada .foto-perfil {
-    border: none;
-    border-radius: 20px;
-    display: block;
-}
-
-/* Animação da borda girando */
-/*@keyframes girarBorda {
-    0% {
-        transform: rotate(0deg);
-    }
-
-    100% {
-        transform: rotate(360deg);
-    }
-}*/

@@ -12,7 +12,7 @@
 </head>
 <body>
     <div class="Menu-Port">
-        <i id="iconMenu" class="fa-solid fa-door-closed icone-menu botao-icone"></i>
+        <i id="iconMenu" class="fa-solid fa-bars botao-icone"></i>
 
         <div id="menuItens" class="menu-itens">
             <a asp-page="/Index" class="menu-container ini-container margin-top">
@@ -21,17 +21,17 @@
                 <div class="borda-texto transicao-texto"><span class="texto-menu">INÍCIO</span></div>
             </a>
 
-            <div class="menu-container habi-container margin-top">
+            <a asp-page="/Habilidades" class="menu-container habi-container margin-top">
                 <i class="fa-solid fa-graduation-cap icone-menu"></i>
                 <span class="led"></span>
                 <div class="borda-texto transicao-texto"><span class="texto-menu">HABILIDADES</span></div>
-            </div>
+            </a>
 
-            <div class="menu-container exp-container margin-top">
+            <a asp-page="/Experiencias" class="menu-container exp-container margin-top">
                 <i class="fa-solid fa-briefcase icone-menu"></i>
                 <span class="led"></span>
                 <div class="borda-texto transicao-texto"><span class="texto-menu">EXPERIÊNCIAS</span></div>
-            </div>
+            </a>
 
             <a href="https://github.com/jefferosa" class="menu-container github-container margin-top" target="_blank">
                 <i class="fa-brands fa-github icone-menu"></i>
